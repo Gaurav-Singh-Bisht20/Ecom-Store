@@ -5,8 +5,12 @@ import { FaMinus } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../store/CartSlice';
+import { IoHeart } from "react-icons/io5";
+import {toggleWishlist} from "../store/WishlistSlice"
+
 
 const ProductDetailPage = () => {
+    const [wish, setWish] = useState(false);
     const [count,setCount] = useState(1);
     const {id} = useParams();
     console.log(id);
@@ -38,12 +42,17 @@ const ProductDetailPage = () => {
             console.error("Product is undefined or missing ID.");
         }
     }
+    
+    function handleWishlist(){
+        setWish(!wish);
+        dispatch(toggleWishlist(product))
+        console.log("product added to wishlist")
+    }
 
     return (
-        <div className='w-10/12   mx-auto mt-12 flex gap-8 '>
-        
+        <div className='w-10/12   mx-auto mt-12 flex gap-8 relative'>
         <div className='w-1/2  '>
-        
+        <IoHeart className={`text-4xl text-red-600 absolute top-2 left-2 opacity-${wish ? '100' : '40'}`} onClick={handleWishlist}/>
         <img src={product.images[0]} alt="" className='w-full h-full object-cover rounded-md' />
         
         </div>

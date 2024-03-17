@@ -8,6 +8,7 @@ import WishlistPage from './pages/WishlistPage'
 import ProductDetailPage from './pages/ProductDetailPage'
 import { Provider } from 'react-redux'
 import Store from './store/store'
+import OrderPlaced from './pages/OrderPlaced'
 
 function App() {
   return (
@@ -19,8 +20,10 @@ function App() {
         <Route path='/' element={<Home/>}></Route>
         <Route path='/cart' element={<CartPage/>}></Route>
         <Route path='/wishlist' element={<WishlistPage/>}></Route>
+        <Route path='/wishlist' element={<WishlistPage/>}></Route>
         <Route path='/login' element={<LoginPage/>}></Route>
         <Route path='/product/:id' element={<ProductDetailPage/>}></Route>
+        <Route path='/cart/order' element={<OrderPlaced/>}></Route>
       </Routes>
       </BrowserRouter>
     </div>
