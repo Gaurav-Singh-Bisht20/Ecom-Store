@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import WishCard from "../components/WishCard";
+import WishCard from "../components/WishCard"
+
 
 const WishlistPage = () => {
   const wishlistItems = useSelector((store)=>store.wishlist.items);

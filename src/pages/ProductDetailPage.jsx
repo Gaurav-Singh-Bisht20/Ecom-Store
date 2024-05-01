@@ -4,7 +4,7 @@ import { useProducts } from '../services/api';
 import { FaMinus } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../store/CartSlice';
+import { addToCart } from "../store/CartSlice"
 import { IoHeart } from "react-icons/io5";
 import {toggleWishlist} from "../store/WishlistSlice"
 
@@ -52,7 +52,7 @@ const ProductDetailPage = () => {
     return (
         <div className='w-10/12   mx-auto mt-12 flex gap-8 relative'>
         <div className='w-1/2  '>
-        <IoHeart className={`text-4xl text-red-600 absolute top-2 left-2 opacity-${wish ? '100' : '40'}`} onClick={handleWishlist}/>
+        <IoHeart className={`text-4xl  absolute top-4 left-4 ${wish ? 'text-red-600 transition-all scale-125' : 'text-gray-900'}`} onClick={handleWishlist}/>
         <img src={product.images[0]} alt="" className='w-full h-full object-cover rounded-md' />
         
         </div>
